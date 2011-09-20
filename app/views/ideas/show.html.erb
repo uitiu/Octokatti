@@ -18,3 +18,24 @@
 
 <%= link_to 'Edit', edit_idea_path(@idea) %> |
 <%= link_to 'Back', ideas_path %>
+
+<% @comments.each do |comment| %>
+<p><%= comment.message %> [<%= link_to 'Remove', comment, confirm: 'Are you sure?', method: :delete %>]</p>
+<% end %>
+
+
+<p>
+  <b>Add a new comment:</b>
+</p>
+
+<%= form_for(@comment) do |f| %>
+   <%= f.hidden_field :idea_id %>
+
+  <div class="field">
+    <%= f.label :message %><br />
+    <%= f.text_area :message %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

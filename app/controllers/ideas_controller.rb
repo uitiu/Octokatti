@@ -14,6 +14,8 @@ class IdeasController < ApplicationController
   # GET /ideas/1.json
   def show
     @idea = Idea.find(params[:id])
+    @comment = @idea.comments.new
+    @comments = @idea.comments
 
     respond_to do |format|
       format.html # show.html.erb

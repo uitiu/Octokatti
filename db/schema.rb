@@ -13,6 +13,13 @@
 
 ActiveRecord::Schema.define(:version => 20110920134015) do
 
+  create_table "comments", :force => true do |t|
+    t.text     "message"
+    t.integer  "idea_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "ideas", :force => true do |t|
     t.string   "name"
     t.text     "description"
