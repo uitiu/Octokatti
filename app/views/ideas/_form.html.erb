@@ -23,6 +23,14 @@
     <%= f.label :picture %><br />
     <%= f.file_field :picture %>
   </div>
+  <div class="field">
+    <%= f.label :rating %><br />
+    <%= f.radio_button("rating", "1") %> 1<br />
+    <%= f.radio_button("rating", "2") %> 2<br />
+    <%= f.radio_button("rating", "3") %> 3<br />
+    <%= f.radio_button("rating", "4") %> 4<br />
+    <%= f.radio_button("rating", "5") %> 5<br />
+  </div>    
   <div class="actions">
     <%= f.submit %>
   </div>

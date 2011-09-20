@@ -5,6 +5,7 @@
     <th>Name</th>
     <th>Description</th>
     <th>Picture</th>
+    <th>Rating</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +15,8 @@
   <tr>
     <td><%= idea.name %></td>
     <td><%= idea.description %></td>
-    <td><%= idea.picture %></td>
+    <td><%= image_tag(idea.picture_url, :width => 150) if idea.picture.present? %></td>
+    <td><%= idea.rating %></td>
     <td><%= link_to 'Show', idea %></td>
     <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
     <td><%= link_to 'Destroy', idea, confirm: 'Are you sure?', method: :delete %></td>
